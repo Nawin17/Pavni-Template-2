@@ -1,0 +1,838 @@
+
+<!-- about.php -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" type="text/css" href="../home_page/home.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* Style for the item to center the content */
+        .inner-banner .item {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            /* height: 100%; */
+        }
+    
+        /* The image container */
+        .inner-slider-list {
+            max-height: 800px;
+            height: 800px;
+            /* margin-top: 50px; */
+            background-size: cover !important;
+            background-position: top center !important;
+            display: flex;
+            position: relative;
+    
+            width: 100%;
+            height: 100%;
+            background-size: cover;
+            background-position: center;
+            opacity: 0;
+            /* Start with full transparency */
+            animation: fadeIn 2s ease-out forwards;
+            /* Add fade-in animation */
+        }
+    
+        .inner-slider-list:before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(0, 0, 0, 0.5);
+            /* Adjust transparency as needed */
+        }
+    
+        /* Container styling */
+    
+    
+        /* Table styling */
+        .table table {
+            border-collapse: collapse;
+            font-size: 18px;
+            margin-top: 35px;
+            margin-bottom: 40px;
+            text-align: left;
+            box-shadow: 0 0 6px rgba(0, 0, 0, 1.1);
+        }
+    
+        /* Table header styling */
+        .table th,
+        .table td {
+            padding: 12px 15px;
+            border: 1px solid #ddd;
+            text-align: center;
+    
+        }
+    
+        /* Table header background and text color */
+        .table th {
+            background-color: #005071;
+            color: white;
+    
+        }
+    
+        /* Table row background color on hover */
+        .table tbody tr:hover {
+            background-color: #f1f1f1;
+        }
+    
+        /* Table row striping */
+        .table tbody tr:nth-child(even) {
+            background-color: #f9f9f9;
+        }
+    
+        /* Link styling */
+        .table a {
+            color: #005071;
+            text-decoration: none;
+        }
+    
+        .table a:hover {
+            text-decoration: none;
+            font-weight: 700;
+            color: #005071;
+        }
+    
+        #gallery {
+            margin: 20px 0px 0px 0px auto;
+            max-width: 100%;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            background-image: url('./images/inside-banner.jpg');
+        }
+    
+        .gallery .container-xxl {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            background-color: #3185b5;
+            margin-top: 70px;
+        }
+    
+        .Imgdiv {
+            margin-bottom: 10px;
+            overflow: hidden;
+            padding: 10px;
+        }
+    
+        .Imgdiv img {
+            width: 100%;
+            height: auto;
+            transition: transform 0.3s ease;
+        }
+    
+        .Imgdiv img:hover {
+            transform: scale(1.1);
+        }
+    
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+    
+        .tabs div {
+            margin: 0 10px;
+        }
+    
+        .tabs a {
+            text-decoration: none;
+            font-size: 1.2rem;
+            padding: 10px 20px;
+            color: #073c6d;
+            border-left: solid 3px #acd0ff;
+            background: linear-gradient(to right, #acd0ff 0%, #f0e1d8 50%, #fff 50%, #fff 100%);
+            background-size: 200% 100%;
+            background-position: 100% 0;
+            transition: background-position 0.9s;
+        }
+    
+        .tabs a:hover {
+            background-position: 0 0;
+            text-decoration: none;
+        }
+    
+        .tabs a.active {
+            background: linear-gradient(180deg, #097b8a, #0f0355);
+            color: #fff;
+            text-decoration: none;
+        }
+    
+    
+        .pre-primary {
+            background: url(../images/doodle22.jpg) no-repeat center center;
+            background-size: cover;
+            /* padding: 50px 0; */
+            position: relative;
+        }
+    
+    
+    
+        .tabs a.active {
+            background: linear-gradient(180deg, #097b8a, #0f0355);
+            color: #fff;
+            text-decoration: none;
+        }
+    
+        #class1_content,
+        #class2_content,
+        #class3_content,
+        #class4_content,
+        #class5_content {
+            display: none;
+        }
+    
+        #class1_content.active,
+        #class2_content.active,
+        #class3_content.active,
+        #class4_content.active,
+        #class5_content.active {
+            display: block;
+        }
+    
+        table {
+            width: 80%;
+            margin: 0 auto;
+            border-collapse: collapse;
+            background-color: white;
+        }
+    
+        th,
+        td {
+            padding: 10px;
+            border: 1px solid #ddd;
+            color: black;
+        }
+    
+        th {
+            background-color: #fdd5b1;
+        }
+    
+        td a {
+            color: #0066cc;
+            text-decoration: none;
+        }
+    
+        .block {
+            margin-top: 20px;
+            background-color: transparent;
+        }
+    
+        .container {
+            max-width: 800px;
+            margin-top: 50px;
+        }
+    
+    
+        .container h2 {
+            background-color: #20335a;
+            color: #fff;
+            padding: 10px;
+            border-radius: 5px;
+            text-align: center;
+    
+        }
+    
+        .category {
+            margin-bottom: 20px;
+        }
+    
+        .category h3 {
+            color: #005071;
+            border-bottom: 2px solid #005071;
+            padding-bottom: 5px;
+        }
+    
+        .sub-category {
+            margin-left: 20px;
+        }
+    
+        .sub-category h4 {
+            color: #333;
+            margin-bottom: 5px;
+        }
+    
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+    
+        ul li {
+            position: relative;
+            padding-left: 20px;
+            margin-bottom: 5px;
+        }
+    
+        /* ul li:before {
+                content: '\f00c';
+                font-family: 'Font Awesome 5 Free';
+                font-weight: 900;
+                position: absolute;
+                left: 0;
+                color: #005071;
+            } */
+    </style>
+ </head>
+<body>
+    <!-- Include the header -->
+    <header>
+        <style>
+            .nav-item .nav-link {
+                font-size: 20px;
+            }
+        </style>
+        <!-- Navigation Bar -->
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark" style="height: 90px;">
+            <!-- Just an image -->
+            <img src="./images/pavni-logo.png" style="width: 50px; height: 50px;margin-left: 0px; margin-right: 5px;  padding: 0;" alt="">
+
+            <span class="company-name" style="margin-right :120px; font-size: 25px;">PAVNI ENGINEERING (OPC) PRIVATE LIMITED</span>
+
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./index.html"><strong> Home </strong> </a>
+                    </li>
+
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./aboutus.html"><strong> About Us </strong></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./quality.html"><strong> Quality </strong></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./sustainbility.html"><strong> Sustainability </strong></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./services.html"><strong> Services </strong></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./project.html"><strong> Projects </strong></a>
+                    </li>
+                    <li class="nav-item active">
+                        <a class="nav-link" href="./clients.html"><strong> Clients </strong></a>
+                    </li>
+
+
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <div class="background-leader">
+        <div>
+            <!-- INNER PAGE CONTENT STARTS -->
+            <section id="gallery">
+                <div class="block">
+                    <h2 class="heading text-center">OUR SERVICES</h2>
+                </div>
+
+
+                <div class="mobile-tab">
+                    <div class="mob-tab-previous"><img src="/images/previous-png.png" alt=""></div>
+                    <div><a href="#" id="class1" class="tab-link active">HUMAN RESOURCES</a></div>
+                    <div><a href="#" id="class2" class="tab-link">CONSTRUCTION</a></div>
+                    <div><a href="#" id="class3" class="tab-link">ENGINEERING</a></div>
+                    <div><a href="#" id="class4" class="tab-link">PROCUREMENT</a></div>
+                    <div><a href="#" id="class5" class="tab-link">TRAINING</a></div>
+                    <div class="mob-tab-next"><img src="/images/next-png.png" alt=""></div>
+                </div>
+
+                <div class="tabs">
+                    <div><a href="#" id="class1" class="tab-link active">HUMAN RESOURCES</a></div>
+                    <div><a href="#" id="class2" class="tab-link">CONSTRUCTION</a></div>
+                    <div><a href="#" id="class3" class="tab-link">ENGINEERING</a></div>
+                    <div><a href="#" id="class4" class="tab-link">PROCUREMENT</a></div>
+                    <div><a href="#" id="class5" class="tab-link">TRAINING</a></div>
+                </div>
+
+                <div class="container-xxl  active" id="class1_content">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="container">
+                                <h2>Human Resources</h2>
+                                <div class="category">
+                                    <h3>White-collars: (oil & Gas/Power/Shipbuilding)</h3>
+                                    <div class="sub-category">
+                                        <ul>
+                                            <li>Project Managers</li>
+                                            <li>Construction Managers</li>
+                                            <li>Production Managers</li>
+                                            <li>Administration Managers and Officers</li>
+                                            <li>Technical Office Engineers</li>
+                                            <li>Planning Engineers</li>
+                                            <li>Construction Engineers</li>
+                                            <li>Piping Engineers</li>
+                                            <li>Mechanical Engineers</li>
+                                            <li>Field Engineers</li>
+                                            <li>Supervisors</li>
+                                            <li>QA/QC Engineers and Inspectors</li>
+                                            <li>Safety Engineers and Inspectors</li>
+                                            <li>LEVEL II, AWS, CSWIP, NEBOSH</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="category">
+                                    <h3>Blue-collars: (oil & Gas/Power/Shipbuilding)</h3>
+                                    <div class="sub-category">
+                                        <ul>
+                                            <li>Structural</li>
+                                            <li>Pipe</li>
+                                            <li>Tanks</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="category">
+                                    <h3>Civil</h3>
+                                    <div class="sub-category">
+                                        <ul>
+                                            <li>Foreman</li>
+                                            <li>Mason</li>
+                                            <li>Carpenter</li>
+                                            <li>Bar Bender</li>
+                                            <li>Floor Labors</li>
+                                            <li>Piping</li>
+                                            <li>HVAC Crew Leaders</li>
+                                            <li>Fabricators & Fitters</li>
+                                            <li>Foreman</li>
+                                            <li>Welders (with /without NAKS qualification)</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+
+                                <div class="category">
+                                    <h3>Qualification of: GTAW/SMAW/GMAW/FCAW</h3>
+                                    <div class="sub-category">
+                                        <ul>
+                                            <li>Foreman SANDBLASTER</li>
+                                            <li>Foreman PAINTER</li>
+                                            <li>Foreman Scaffolders</li>
+                                            <li>Foreman Riggers</li>
+                                            <li>Operators</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                                <div class="category">
+                                    <h3>Shipyard</h3>
+                                    <div class="sub-category">
+                                        <ul>
+                                            <li>Foreman Hull Assembler</li>
+                                            <li>Plate & Pipe-Fitters</li>
+                                            <li>Foreman SANDBLASTER</li>
+                                            <li>Foreman PAINTER</li>
+                                        </ul>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-xxl" id="class2_content">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="container">
+                                <h2>Construction</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="container-xxl" id="class3_content">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="container">
+                                <h2>Engineering</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-xxl" id="class4_content">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="container">
+                                <h2>Procurement</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="container-xxl" id="class5_content">
+                    <div class="row">
+                        <div class="col-12">
+                            <div class="container">
+                                <h2>Training</h2>
+                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio. Praesent convallis urna a lacus interdum ut hendrerit risus congue. Nunc sagittis dictum nisi, sed ullamcorper ipsum dignissim ac. In at libero sed nunc venenatis imperdiet sed ornare turpis. Donec vitae dui eget tellus gravida venenatis. Integer fringilla congue eros non fermentum. Sed dapibus pulvinar nibh tempor porta. Cras ac leo purus. Mauris quis diam velit.</p>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+
+                <style>
+                    #gallery {
+
+                        max-width: 100%;
+                        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+                        background-image: url('./images/doodle22.jpg');
+                    }
+
+                    .gallery .container-xxl {
+                        display: flex;
+                        flex-wrap: wrap;
+                        justify-content: space-between;
+                        background: url('./images/png-divider.png') #3185b5;
+                    }
+
+                    .Imgdiv {
+                        margin-bottom: 10px;
+                        overflow: hidden;
+                        padding: 10px;
+                    }
+
+                    .Imgdiv img {
+                        width: 100%;
+                        height: auto;
+                        transition: transform 0.3s ease;
+                    }
+
+                    .Imgdiv img:hover {
+                        transform: scale(1.1);
+                    }
+
+                    .tabs {
+                        display: flex;
+                        justify-content: center;
+                        margin-bottom: 20px;
+                        margin-top: 40px;
+                    }
+
+                    .mobile-tab {
+                        display: none;
+                    }
+
+                    .tabs div {
+                        margin: 0 10px;
+                    }
+
+                    .tabs a {
+                        text-decoration: none;
+                        font-size: 1.2rem;
+                        padding: 10px 20px;
+                        color: #073c6d;
+                        border-left: solid 3px #acd0ff;
+                        background: linear-gradient(to right, #396fb6 0%, #f0e1d8 50%, #fff 50%, #fff 100%);
+                        background-size: 200% 100%;
+                        background-position: 100% 0;
+                        transition: background-position 0.9s;
+                    }
+
+                    .tabs a:hover {
+                        background-position: 0 0;
+                        text-decoration: none;
+                    }
+
+                    .tabs a.active {
+                        background: linear-gradient(180deg, #398eb6, #071f4e);
+                        color: #fff;
+                        text-decoration: none;
+                    }
+
+                    .mobile-tab {
+                        display: none;
+                    }
+
+                    .mobile-tab .mob-tab-previous {
+                        flex: 0 0 auto;
+                        cursor: pointer;
+                        position: absolute;
+                        margin-right: 14rem;
+                    }
+
+                    .mobile-tab .mob-tab-next {
+                        flex: 0 0 auto;
+                        cursor: pointer;
+                        position: absolute;
+                        margin-left: 14rem;
+                    }
+
+                    .mobile-tab a.tab-link {
+                        flex: 1 0 100%;
+                        display: none;
+                        text-align: center;
+                        text-decoration: none;
+                        font-size: 1.2rem;
+                        padding: 10px 20px;
+                        color: #073c6d;
+                        border-left: solid 3px #acd0ff;
+                        background: linear-gradient(to right, #acd0ff 0%, #f0e1d8 50%, #fff 50%, #fff 100%);
+                        background-size: 200% 100%;
+                        background-position: 100% 0;
+                        transition: background-position 0.9s;
+                    }
+
+                    .mobile-tab a.tab-link.active {
+                        display: block;
+                        background: linear-gradient(180deg, #097b8a, #0f0355);
+                        color: #fff;
+                    }
+
+                    .mobile-tab .mob-tab-previous img,
+                    .mobile-tab .mob-tab-next img {
+                        background-color: #073c6d;
+                        width: 40px;
+                        height: 30px;
+                    }
+
+                    @media (max-width: 768px) {
+                        .tabs a {
+                            font-size: 1rem;
+                            padding: 8px 16px;
+                        }
+
+                        .Imgdiv {
+                            padding: 5px;
+                        }
+
+                        .mobile-tab {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            position: relative;
+                            overflow: hidden;
+                            width: 100%;
+                        }
+
+                        .tabs {
+                            display: none;
+                        }
+                    }
+
+                    @media (min-width: 769px) {
+                        .tabs a {
+                            font-size: 1.2rem;
+                            padding: 10px 20px;
+                            border-radius: 10%;
+                        }
+
+                        .Imgdiv {
+                            padding: 10px;
+                        }
+
+                    }
+
+                    @media (max-width: 480px) {
+                        .mobile-tab {
+                            display: flex;
+                            align-items: center;
+                            justify-content: center;
+                            position: relative;
+                            overflow: hidden;
+                            width: 100%;
+                        }
+
+                        .tabs {
+                            display: none;
+                        }
+                    }
+                </style>
+                <script>
+                    document.addEventListener("DOMContentLoaded", function() {
+                        const tabs = document.querySelectorAll(".mobile-tab a.tab-link");
+                        const prevBtn = document.querySelector(".mobile-tab .mob-tab-previous");
+                        const nextBtn = document.querySelector(".mobile-tab .mob-tab-next");
+                        const contents = document.querySelectorAll(".container-xxl");
+                        let currentIndex = 0;
+
+                        function showTab(index) {
+                            tabs.forEach((tab, i) => {
+                                if (i === index) {
+                                    tab.classList.add("active");
+                                    contents[i].classList.add("active");
+                                } else {
+                                    tab.classList.remove("active");
+                                    contents[i].classList.remove("active");
+                                }
+                            });
+                        }
+
+                        prevBtn.addEventListener("click", function() {
+                            currentIndex = (currentIndex - 1 + tabs.length) % tabs.length;
+                            showTab(currentIndex);
+                        });
+
+                        nextBtn.addEventListener("click", function() {
+                            currentIndex = (currentIndex + 1) % tabs.length;
+                            showTab(currentIndex);
+                        });
+
+                        tabs.forEach((tab, index) => {
+                            tab.addEventListener("click", function(e) {
+                                e.preventDefault();
+                                currentIndex = index;
+                                showTab(currentIndex);
+                            });
+                        });
+
+                        showTab(currentIndex);
+                    });
+                </script>
+                <script>
+                    document.addEventListener('DOMContentLoaded', function() {
+                        const tabs = document.querySelectorAll('.tab-link');
+                        const contents = document.querySelectorAll('.container-xxl');
+
+                        tabs.forEach(tab => {
+                            tab.addEventListener('click', function(e) {
+                                e.preventDefault();
+
+                                // Remove active class from all tabs
+                                tabs.forEach(item => item.classList.remove('active'));
+
+                                // Hide all content
+                                contents.forEach(content => content.style.display = 'none');
+
+                                // Add active class to the clicked tab
+                                this.classList.add('active');
+
+                                // Show the corresponding content
+                                const contentId = this.id + '_content';
+                                document.getElementById(contentId).style.display = 'block';
+                            });
+                        });
+                    });
+                </script>
+
+                <script>
+                    $(document).ready(function() {
+                        $("#class1").click(function(e) {
+                            e.preventDefault();
+                            $("#class1_content").addClass("active");
+                            $("#class2_content").removeClass("active");
+                            $("#class3_content").removeClass("active");
+                            $("#class4_content").removeClass("active");
+                            $("#class5_content").removeClass("active");
+                            $(this).addClass("active");
+                            $("#class2").removeClass("active");
+                            $("#class3").removeClass("active");
+                            $("#class4").removeClass("active");
+                            $("#class5").removeClass("active");
+                        });
+
+
+
+                        $("#class2").click(function(e) {
+                            e.preventDefault();
+                            $("#class2_content").addClass("active");
+                            $("#class1_content").removeClass("active");
+                            $("#class3_content").removeClass("active");
+                            $("#class4_content").removeClass("active");
+                            $("#class5_content").removeClass("active");
+                            $(this).addClass("active");
+                            $("#class1").removeClass("active");
+                            $("#class3").removeClass("active");
+                            $("#class4").removeClass("active");
+                            $("#class5").removeClass("active");
+                        });
+
+                        $("#class3").click(function(e) {
+                            e.preventDefault();
+                            $("#class3_content").addClass("active");
+                            $("#class1_content").removeClass("active");
+                            $("#class2_content").removeClass("active");
+                            $("#class4_content").removeClass("active");
+                            $("#class5_content").removeClass("active");
+                            $(this).addClass("active");
+                            $("#class1").removeClass("active");
+                            $("#class2").removeClass("active");
+                            $("#class4").removeClass("active");
+                            $("#class5").removeClass("active");
+                        });
+
+                        $("#class4").click(function(e) {
+                            e.preventDefault();
+                            $("#class4_content").addClass("active");
+                            $("#class1_content").removeClass("active");
+                            $("#class2_content").removeClass("active");
+                            $("#class3_content").removeClass("active");
+                            $("#class5_content").removeClass("active");
+                            $(this).addClass("active");
+                            $("#class1").removeClass("active");
+                            $("#class2").removeClass("active");
+                            $("#class3").removeClass("active");
+                            $("#class5").removeClass("active");
+                        });
+
+                        $("#class5").click(function(e) {
+                            e.preventDefault();
+                            $("#class5_content").addClass("active");
+                            $("#class1_content").removeClass("active");
+                            $("#class2_content").removeClass("active");
+                            $("#class3_content").removeClass("active");
+                            $("#class4_content").removeClass("active");
+                            $(this).addClass("active");
+                            $("#class1").removeClass("active");
+                            $("#class2").removeClass("active");
+                            $("#class3").removeClass("active");
+                            $("#class4").removeClass("active");
+                        });
+
+                    });
+                </script>
+            </section>
+            <!-- INNER PAGE CONTENT ENDS -->
+
+        </div>
+    </div>
+   
+<br>
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center">
+        <div class="container">
+    
+                    <div class="row">
+                        <div class="col-md-7">
+                            
+                            <h5>PAVNI ENGINEERING (OPC) PRIVATE LIMITED<br>
+    #4, Flat G-1, Palar Street, 
+    Thiruthani Nagar,<br>
+    Old Pallavaram,
+    Chennai 600117. India.
+    </h5>
+                            
+                         <br>
+                            <a>Copy © Powered by company name,  All rights reserved.</a>
+                        </div> 
+                        <div class="col-md-1">
+                        </div>
+                        <div class="col-md-3 social-icons">
+                            <h5>Social Media</h5>
+                            <br>
+                            <a href=" #"><img src="./images/facebook.png" alt="Facebook"></a>
+                            <a href="#"><img src="./images/twitter.png" alt="Twitter"></a>
+                            <a href="#"><img src="./images/instagram.png" alt="Instagram"></a>
+                        </div>
+                        
+                        
+    
+             
+            
+                    </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us</title>
+    <link rel="stylesheet" type="text/css" href="../home_page/home.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+        
+        /* Navigation Bar */
+        .navbar {
+            height: 90px;
+            background-color: #343a40;
+        }
+        .navbar img {
+            width: 50px; 
+            height: 50px;
+            margin-right: 10px;  
+        }
+        .navbar .company-name {
+            font-size: 25px;
+            color: #ffffff;
+            margin-right: 120px;
+        }
+        .navbar .nav-link {
+            font-size: 20px;
+            color: #ffffff;
+        }
+        .navbar .nav-link:hover {
+            color: #f8f9fa;
+        }
+        
+        /* Main Section */
+        .main-section {
+            margin-top: 100px;
+            padding: 20px;
+        }
+        .heading {
+            font-size: 2rem;
+            margin-bottom: 20px;
+            text-align: center;
+        }
+        .project-info {
+            margin-bottom: 20px;
+        }
+
+        .elementor-toggle .elementor-tab-title {
+            font-weight: 700;
+            line-height: 1;
+            padding: 15px;
+            border-bottom: 1px solid #d5d8dc;
+            cursor: pointer;
+            outline: none;
+        }
+        .elementor-toggle .elementor-tab-content {
+            padding: 15px;
+            border-bottom: 1px solid #d5d8dc;
+            display: none;
+        }
+        .elementor-toggle .elementor-tab-title.elementor-active {
+            border-bottom: none;
+        }
+        .elementor-toggle .elementor-tab-title.elementor-active .elementor-toggle-icon-closed {
+            display: none;
+        }
+        .elementor-toggle .elementor-tab-title.elementor-active .elementor-toggle-icon-opened {
+            display: block;
+        }
+        
+        /* Footer Styles */
+        footer {
+            background-color: #343a40;
+            color: #ffffff;
+            padding: 20px 0;
+        }
+        footer h5 {
+            margin-bottom: 10px;
+        }
+        footer .social-icons img {
+            width: 32px;
+            height: 32px;
+            margin-right: 10px;
+        }
+        footer .social-icons a {
+            color: #ffffff;
+            text-decoration: none;
+        }
+        footer .social-icons a:hover {
+            color: #f8f9fa;
+        }
+    </style>
+     <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f8f9fa;
+        }
+
+        /* Main Section */
+        .main-section {
+            margin-top: 80px;
+            padding: 40px 20px;
+            background-color: #ffffff;
+        }
+        .heading {
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            text-align: center;
+            color: #343a40;
+        }
+        .project-info {
+            margin-bottom: 30px;
+            font-size: 1.1rem;
+            color: #495057;
+        }
+        .accordion .card {
+            border: 1px solid #d5d8dc;
+            border-radius: 5px;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+        .accordion .card-header {
+            background-color: #e9ecef;
+            border-bottom: 1px solid #d5d8dc;
+            padding: 15px;
+        }
+        .accordion .card-header h5 {
+            margin: 0;
+        }
+        .accordion .btn-link {
+            font-size: 1.2rem;
+            color: #007bff;
+            text-decoration: none;
+            font-weight: 600;
+            background-color: transparent;
+            border: none;
+            outline: none;
+        }
+        .accordion .btn-link:hover {
+            color: #0056b3;
+        }
+        .accordion .card-body {
+            padding: 20px;
+            background-color: #f8f9fa;
+            font-size: 1rem;
+            color: #343a40;
+        }
+    </style>
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-dark">
+        <a class="navbar-brand" href="#">
+            <img src="./images/pavni-logo.png" alt="Logo">
+            <span class="company-name">PAVNI ENGINEERING (OPC) PRIVATE LIMITED</span>
+        </a>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav">
+                <li class="nav-item">
+                    <a class="nav-link" href="./index.html"><strong>Home</strong></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./aboutus.html"><strong>About Us</strong></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./quality.html"><strong>Quality</strong></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./sustainbility.html"><strong>Sustainability</strong></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./services.html"><strong>Services</strong></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./project.html"><strong>Projects</strong></a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="./clients.html"><strong>Clients</strong></a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- Main Content -->
+    <section class="main-section">
+        <div class="container">
+            <h2 class="heading">Project Informations</h2>
+            <div class="project-info">
+                <p>By leveraging the latest technologies in data analytics and machine learning, the project seeks to enhance data accuracy, streamline workflows, and provide actionable insights. Key objectives include the integration of a robust data warehouse, implementation of real-time data processing, and the development of intuitive dashboards for end-users. The project team comprises experienced professionals from various domains, ensuring a multidisciplinary approach to problem-solving. Over the next six months, the project will go through multiple phases including requirement analysis, design, development, testing, and deployment.</p>
+            </div>
+            <div class="accordion" id="projectAccordion">
+                <div class="card">
+                    <div class="card-header" id="headingOne">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link" type="button" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+                                Project 1
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseOne" class="collapse show" aria-labelledby="headingOne" data-parent="#projectAccordion">
+                        <div class="card-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio.
+                        </div>
+                    </div>
+                </div>
+                <div class="card">
+                    <div class="card-header" id="headingTwo">
+                        <h5 class="mb-0">
+                            <button class="btn btn-link collapsed" type="button" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                Project 2
+                            </button>
+                        </h5>
+                    </div>
+                    <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#projectAccordion">
+                        <div class="card-body">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus imperdiet, nulla et dictum interdum, nisi lorem egestas odio, vitae scelerisque enim ligula venenatis dolor. Maecenas nisl est, ultrices nec congue eget, auctor vitae massa. Fusce luctus vestibulum augue ut aliquet. Mauris ante ligula, facilisis sed ornare eu, lobortis in odio.
+                        </div>
+                    </div>
+                </div>
+                <!-- Add more projects similarly -->
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-dark text-white text-center">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-7">
+                    <h5>PAVNI ENGINEERING (OPC) PRIVATE LIMITED<br>
+                    #4, Flat G-1, Palar Street, 
+                    Thiruthani Nagar,<br>
+                    Old Pallavaram,
+                    Chennai 600117. India.
+                    </h5>
+                    <p class="mb-0">Copy © Powered by company name, All rights reserved.</p>
+                </div>
+                <div class="col-md-5 social-icons">
+                    <h5>Social Media</h5>
+                    <a href=" #"><img src="./images/facebook.png" alt="Facebook"></a>
+                    <a href="#"><img src="./images/twitter.png" alt="Twitter"></a>
+                    <a href="#"><img src="./images/instagram.png" alt="Instagram"></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
